@@ -30,36 +30,6 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	/**
-	 * A little insertion test
-	 */
-	@PostConstruct
-	public void test() {
-		CharacterDto characterDto = new CharacterDto("Derpy"//
-				, "Pégase"//
-				, 3//
-				, new HashMap<>()//
-				, new Level(2L, "D6")//
-				, new Level(2L, "D6")//
-				, new Level(3L, "D8")//
-				, "https://i.kym-cdn.com/entries/icons/original/000/005/316/derpypony.jpg"//
-				, new HashSet<>());
-
-		CharacterDto characterDto2 = new CharacterDto("Prince Rutherford"//
-				, "Yakyak"//
-				, 3//
-				, new HashMap<>()//
-				, new Level(5L, "D12")//
-				, new Level(2L, "D6")//
-				, new Level(3L, "D8")//
-				, ""//
-				, new HashSet<>());
-		
-		CharacterEntity character = characterService.generateCharacterFromDto(characterDto);
-
-		logger.info("Save a new pony");
-		iCharacterDao.save(character);
-		iCharacterDao.save(characterService.generateCharacterFromDto(characterDto2));
-	}
+	
 
 }
